@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PlayerRequest;
 use App\Interfaces\PlayerRepositoryInterface;
 
 class PlayerController extends Controller
@@ -21,13 +22,13 @@ class PlayerController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function store(PlayerRequest $request)
     {
         return $this->Player->store($request);
     }
 
     
-    public function update(Request $request)
+    public function update(PlayerRequest $request)
     {
         return $this->Player->update($request);
     }

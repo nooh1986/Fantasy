@@ -8,17 +8,17 @@ Route::get('/', function () {
     return view('Backend.login');
 });
 
-Route::get('/dashboard1', function () {
-    return view('Backend.dashboard');
-});
-
-
-
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth']);
+    return view('backend.dashboard');
+})->middleware(['auth:web'])->name('dashboard');
 
 
-Route::resource('Player' , PlayerController::class);
+Route::group(['middleware' => 'auth:web'],function(){
+
+    Route::resource('Player' , PlayerController::class);
+
+});    
+
+
 
 require __DIR__.'/auth.php';

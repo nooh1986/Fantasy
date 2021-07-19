@@ -42,7 +42,6 @@
 
                                     <td>{{ $player->title }}</td>
 
-
                                     <td><a href="#">{{ $player->email }}</a> </td>
 
                                     <td class="text-center">
