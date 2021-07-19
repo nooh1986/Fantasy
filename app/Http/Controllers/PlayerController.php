@@ -21,38 +21,20 @@ class PlayerController extends Controller
     }
 
     
-    public function create()
-    {
-        //
-    }
-
-    
     public function store(Request $request)
     {
-        //
+        return $this->Player->store($request);
     }
 
     
-    public function show($id)
+    public function update(Request $request)
     {
-        //
+        return $this->Player->update($request);
     }
 
     
-    public function edit($id)
+    public function destroy(Request $request)
     {
-        //
-    }
-
-    
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    
-    public function destroy($id)
-    {
-        //
+        return $this->Player->destroy($request);
     }
 }
