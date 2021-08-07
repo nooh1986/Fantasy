@@ -35,6 +35,17 @@
                     </div>
                     <br>
 
+                    <div class="col">
+                        <label>الصلاحيات:</label>
+                        <select name="roles" class="form-control SlectBox">
+                            <option value="" selected disabled>------</option>
+                            @foreach($roles as $role)
+                                <option value="{{$role->id}}">{{$role->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>  
+                    <br>
+
                 </div>
 
                 <div class="modal-footer">

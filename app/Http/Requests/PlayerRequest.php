@@ -28,8 +28,7 @@ class PlayerRequest extends FormRequest
             'name'     => 'required|unique:users,name,' .$this->id,
             'title'    => 'required',
             'email'    => 'required|email|unique:users,email,' .$this->id,
-            'password' => 'required',
-            
+           
         ];
     }
 
@@ -40,7 +39,6 @@ class PlayerRequest extends FormRequest
             'name.required'     => 'The :attribute هذا الحقل مطلوب.',
             'name.unique'       => 'The :attribute هذا الاسم تم استخدامه مسبقا.',
             'title.required'    => 'The :attribute هذا الحقل مطلوب.',
-            'password.required' => 'validation.required',
             'email.required'    => 'The :attribute هذا الحقل مطلوب.',
             'email.unique'      => 'The :attribute هذا الاسم تم استخدامه مسبقا.',
             'email.email'       => 'The :attribute  يجب ان يكون البريد الالكتروني صالح .',

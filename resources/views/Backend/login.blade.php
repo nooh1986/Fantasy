@@ -77,16 +77,26 @@
 									<div class="col-md-10 col-lg-10 col-xl-9 mx-auto">
 										<div class="card-sigin">
 											<div class="mb-5 d-flex"> <a href="index.html"><img src="{{ URL::asset('assets/logo/logo_haed_w.svg')}}" class="sign-favicon ht-40" alt="logo"></a></div>
+											@if ($errors->any())
+													<div class="alert alert-danger">
+														<ul>
+															@foreach ($errors->all() as $error)
+																<li>{{ $error }}</li>
+															@endforeach
+														</ul>
+													</div>
+											@endif
+											
 											<div class="card-sigin">
 												<div class="main-signup-header">
 													<form action="{{ route('store') }}" method="Post" autocomplete="off">
 														@csrf
 														<div class="form-group">
-															<label>Email</label> <input class="form-control" placeholder="Enter your email" type="text" name="email">
+															<label>البريد الالكتروني</label> <input class="form-control" placeholder="Enter your email" type="text" name="email">
 														</div>
 														<div class="form-group">
-															<label>Password</label> <input name="password" class="form-control" placeholder="Enter your password" type="password">
-														</div><button class="btn btn-main-primary btn-block">Sign In</button>
+															<label>كلمة السر</label> <input name="password" class="form-control" placeholder="Enter your password" type="password">
+														</div><button class="btn btn-main-primary btn-block">تسجيل الدخول</button>
 													</form>
 												<div>
 											</div>

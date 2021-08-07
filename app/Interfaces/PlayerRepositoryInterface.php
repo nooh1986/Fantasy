@@ -7,6 +7,8 @@ interface PlayerRepositoryInterface
 {
     public function index();
 
+    public function update_password($request);
+
     public function store($request);
 
     public function update($request);

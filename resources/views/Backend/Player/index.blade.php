@@ -10,7 +10,7 @@
 
 @section('content')
     @include('Backend.layouts.messages_alert')
-	<br>
+	<br><br>
     <div class="row row-sm">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
             <div class="card">
@@ -25,11 +25,12 @@
                             <thead>
                                 <tr>
                                     <th class="wd-lg-10p"><span>#</span></th>
-                                    <th class="wd-lg-17p"><span>الاسم</span></th>
-                                    <th class="wd-lg-17p"><span>اللقب</span></th>
-                                    <th class="wd-lg-17p"><span>البريد الالكتروني</span></th>
+                                    <th class="wd-lg-15p"><span>الاسم</span></th>
+                                    <th class="wd-lg-12p"><span>اللقب</span></th>
+                                    <th class="wd-lg-18p"><span>البريد الالكتروني</span></th>
+                                    <th class="wd-lg-15p"><span>اسم الصلاحيه</span></th>
                                     <th class="wd-lg-15p"><span>الحاله</span></th>
-                                    <th class="wd-lg-20p">العمليات</th>
+                                    <th class="wd-lg-15p">العمليات</th>
                                 </tr>
                             </thead>
 
@@ -44,6 +45,15 @@
 
                                     <td><a href="#">{{ $player->email }}</a> </td>
 
+                                    <td>
+                                        @if(!empty($player->getRoleNames()))
+                                            @foreach($player->getRoleNames() as $role)
+                                                {{ $role }}
+                                            @endforeach
+                                        @endif
+                                    </td>
+
+                                    
                                     <td class="text-center">
                                         @if($player->status == 1)
                                             <span class="label text-success d-flex"><div class="dot-label bg-success ml-1"></div>مفعل</span>
@@ -59,11 +69,15 @@
                                         <a data-target="#delete{{ $player->id }}" data-toggle="modal" class="btn btn-sm btn-danger">
                                             <i class="las la-trash"></i>
                                         </a>
+                                        <a data-target="#password{{ $player->id }}" data-toggle="modal" class="btn btn-sm btn-primary">
+                                            <i class="las la-key"></i>
+                                        </a>
                                     </td>
                                 </tr>
 
-                                @include('Backend.Player.update')
+                                @include('Backend.Player.edit')
                                 @include('Backend.Player.delete')
+                                @include('Backend.Player.password')
 
                                 @endforeach                           
                             </tbody>

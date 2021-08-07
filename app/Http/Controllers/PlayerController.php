@@ -38,4 +38,10 @@ class PlayerController extends Controller
     {
         return $this->Player->destroy($request);
     }
+
+
+     public function update_password(Request $request)
+    {
+        return $this->Player->update_password($request);
+    }
 }
