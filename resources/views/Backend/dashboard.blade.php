@@ -8,11 +8,23 @@
 
 @endsection
 
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">الاحصائيات</h4>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
+
 
 @section('content')
-<br><br><br>
+<br>
 اهلا  وسهلا  سيد  {{ Auth::user()->title }}
-<br><br><br><br><br>
+<br><br><br>
 
 <!-- row -->
 	<div class="row row-sm">

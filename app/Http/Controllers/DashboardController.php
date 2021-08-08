@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Total;
 use App\Models\Result;
-use Illuminate\Http\Request;
+
 
 class DashboardController extends Controller
 {
@@ -21,7 +20,7 @@ class DashboardController extends Controller
 
     public function record()
     {
-        $records = Total::where('count', 1)->get();
+        $records = Total::where('count', 1)->orderBy('result_id', 'ASC')->get();
         return view('Backend.Ranking.record' , compact('records'));
     }
     

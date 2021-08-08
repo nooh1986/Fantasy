@@ -8,9 +8,22 @@
     @toastr_css
 @endsection
 
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">نتائج الفورمولا</h4>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
+
+
 @section('content')
     @include('Backend.layouts.messages_alert')
-	<br><br>
+	
     <div class="row row-sm">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 grid-margin">
             <div class="card">

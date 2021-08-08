@@ -8,9 +8,21 @@
     
 @endsection
 
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">تسجيل نتائج الفورمولا</h4>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
+
 
 @section('content')
-    <br>
+    
     <div class="row">
         <div class="col">
             <div class="card">

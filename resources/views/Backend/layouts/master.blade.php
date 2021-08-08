@@ -32,7 +32,9 @@
 				<!-- container opened -->
 				<div class="container-fluid">
 					
-						@yield('content')
+					@yield('page-header')
+
+					@yield('content')
 					
 				</div>
 			

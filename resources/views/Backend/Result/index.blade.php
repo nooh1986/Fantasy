@@ -8,16 +8,28 @@
     @toastr_css
 @endsection
 
+@section('page-header')
+    <!-- breadcrumb -->
+    <div class="breadcrumb-header justify-content-between">
+        <div class="my-auto">
+            <div class="d-flex">
+                <h4 class="content-title mb-0 my-auto">نتائج مراحل الفنتازيا</h4>
+            </div>
+        </div>
+    </div>
+    <!-- breadcrumb -->
+@endsection
+
+
 @section('content')
     @include('Backend.layouts.messages_alert')
-	<br><br>
-    
+	    
     <div class="row row-sm">
         <div class="col-xl-12">
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
                     <a class="btn ripple btn-primary" href="{{ route('Result.create') }}" >إضافه نتيجه مرحله</a>
-                    <br>
+                    
                 </div>    
 
                 <div class="card-body">
