@@ -9,7 +9,7 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Routing\Route as RoutingRoute;
 
 
-Route::get('/', function () {return view('Backend.login');})->name('login1');
+Route::get('/', function () {return view('Backend.login');})->name('login');
 
 
 
