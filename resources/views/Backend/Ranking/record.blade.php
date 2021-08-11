@@ -34,7 +34,8 @@
                             <thead>
                                 <tr>
                                     <th class="wd-lg-20p"><span>رقم الجوله</span></th>
-                                    <th class="wd-lg-25p"><span>اسم اللاعب</span></th>
+                                    <th class="wd-lg-40p"><span>اسم اللاعب</span></th>
+                                    <th class="wd-lg-40p"><span>النقاط</span></th>
                                 </tr>
                             </thead>
 
@@ -43,9 +44,11 @@
                                 @foreach ($records as $record)
 
                                 <tr>
-                                    <td>{{ $record->result->round_id }}</td>
+                                    <td>{{ $record->round_id }}</td>
 
                                     <td>{{ $record->user->name }}</td>
+
+                                    <td>{{ $record->total }}</td>
                                 </tr>
 
                                 @endforeach  

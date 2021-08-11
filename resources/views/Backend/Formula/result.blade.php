@@ -90,7 +90,7 @@
 
                                     <td>{{ $formula->total }}</td>
 
-                                    <td>{{ $formula->totals->total }}</td>
+                                    <td>{{ $formula->score }}</td>
                                     
                                 </tr>
                                 @endforeach  

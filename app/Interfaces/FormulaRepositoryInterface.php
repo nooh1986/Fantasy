@@ -7,9 +7,7 @@ interface FormulaRepositoryInterface
 {
     public function last_result();
 
-    public function create();
-
-    public function store($request);
+    public function record();
 
     public function round_result($request);
 

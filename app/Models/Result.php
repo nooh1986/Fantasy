@@ -14,11 +14,7 @@ class Result extends Model
 
     protected $guarded = [];
 
-    public function totals()
-    {
-        return $this->hasOne(Total::class);
-    }
-
+    
     public function user()
     {
         return $this->belongsTo(User::class);

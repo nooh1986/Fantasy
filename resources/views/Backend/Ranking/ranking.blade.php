@@ -33,11 +33,10 @@
                         <table class="table text-md-nowrap" id="example1">
                             <thead>
                                 <tr>
-                                    <th class="wd-lg-15p"><span>#</span></th>
                                     <th class="wd-lg-25p"><span>اسم اللاعب</span></th>
                                     <th class="wd-lg-20p"><span>نقاط الفنتازيا</span></th>
                                     <th class="wd-lg-20p"><span>نقاط الفورمولا</span></th>
-                                    <th class="wd-lg-20p"><span>عدد الربعيات</span></th>
+                                    {{-- <th class="wd-lg-20p"><span>عدد الربعيات</span></th> --}}
                                 </tr>
                             </thead>
 
@@ -46,15 +45,14 @@
                                 @foreach ($players as $player)
 
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-
+                                    
                                     <td>{{ $player->name }}</td>
 
                                     <td>{{ $player->results->sum('total') }}</td>
 
-                                    <td>{{ $player->totals->sum('total') }}</td>
+                                    <td>{{ $player->results->sum('score') }}</td>
 
-                                    <td>{{ $player->totals->sum('count') }}</td>
+                                    {{-- <td>{{ $player->totals->sum('count') }}</td> --}}
 
                                 </tr>
 

@@ -28,8 +28,7 @@ class ResultRequest extends FormRequest
             'round_id' => 'required',
             'user_id'  => 'required',
             'points'   => 'required|numeric',
-            'neg'      => 'required|numeric',
-            
+                        
         ];
     }
 
@@ -40,9 +39,7 @@ class ResultRequest extends FormRequest
             'round_id.required' => 'The :attribute هذا الحقل مطلوب.',
             'user_id.required'  => 'The :attribute هذا الحقل مطلوب.',
             'points.required'   => 'The :attribute هذا الحقل مطلوب.',
-            'neg.required'      => 'The :attribute هذا الحقل مطلوب.',
             'points.numeric'    => 'The :attribute يجب ادخال رقم.',
-            'neg.numeric'       => 'The :attribute يجب ادخال رقم.',
         ];
     }
 }

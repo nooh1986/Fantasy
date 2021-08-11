@@ -36,6 +36,71 @@ class ResultRepository implements ResultRepositoryInterface
 
         Result::create($data);
 
+        $scores = Result::where('round_id',$request->round_id)->orderBy('total' , 'DESC')->orderBy('goal' , 'DESC')->orderBy('ongoal' , 'ASC')->get();
+
+        foreach($scores as $index => $key)
+        {
+            
+            if($index == 0)
+            {
+                $data1['score']  = 25;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 1)
+            {
+                $data1['score']  = 18;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 2)
+            {
+                $data1['score']  = 15;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 3)
+            {
+                $data1['score']  = 12;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 4)
+            {
+                $data1['score']  = 10;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 5)
+            {
+                $data1['score']  = 8;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 6)
+            {
+                $data1['score']  = 6;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 7)
+            {
+                $data1['score']  = 4;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 8)
+            {
+                $data1['score']  = 2;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 9)
+            {
+                $data1['score']  = 0;
+                Result::findorfail($key->id)->update($data1);
+            }
+        }    
         toastr()->success('تم حفظ البيانات بنجاح');
         return redirect()->route('Result.index');
     }
@@ -62,11 +127,75 @@ class ResultRepository implements ResultRepositoryInterface
 
         $result->update($data);
 
+        $scores = Result::where('round_id',$request->round_id)->orderBy('total' , 'DESC')->orderBy('goal' , 'DESC')->orderBy('ongoal' , 'ASC')->get();
+
+        foreach($scores as $index => $key)
+        {
+            
+            if($index == 0)
+            {
+                $data1['score']  = 25;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 1)
+            {
+                $data1['score']  = 18;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 2)
+            {
+                $data1['score']  = 15;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 3)
+            {
+                $data1['score']  = 12;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 4)
+            {
+                $data1['score']  = 10;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 5)
+            {
+                $data1['score']  = 8;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 6)
+            {
+                $data1['score']  = 6;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 7)
+            {
+                $data1['score']  = 4;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 8)
+            {
+                $data1['score']  = 2;
+                Result::findorfail($key->id)->update($data1);
+            }
+
+            if($index == 9)
+            {
+                $data1['score']  = 0;
+                Result::findorfail($key->id)->update($data1);
+            }
+        }    
+
         toastr()->success('تم تعديل البيانات بنجاح');
         return redirect()->route('Result.index');
     }
-
-
 
     public function destroy($request)
     {

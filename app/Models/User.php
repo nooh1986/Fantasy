@@ -28,12 +28,7 @@ class User extends Authenticatable
         return $this->hasMany(Result::class);
     }
 
-    public function totals()
-    {
-        return $this->hasMany(Total::class);
-    }
-
-    
+        
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];

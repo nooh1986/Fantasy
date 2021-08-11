@@ -30,8 +30,7 @@ Route::group(['middleware' => 'auth:web'],function(){
     Route::get('Ranking' , [FormulaController::class , 'ranking'])->name('Ranking');
 
     Route::get('/dashboard' , [DashboardController::class , 'top'])->name('dashboard');
-
-    Route::get('/record' , [DashboardController::class , 'record'])->name('record');
+    
 
 });    
 

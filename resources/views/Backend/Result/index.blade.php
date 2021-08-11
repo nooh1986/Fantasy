@@ -39,13 +39,14 @@
                                 <tr>
                                     <th class="wd-lg-10p"><span>#</span></th>
                                     <th class="wd-lg-10p"><span>رقم المرحله</span></th>
-                                    <th class="wd-lg-15p"><span>اسم اللاعب</span></th>
+                                    <th class="wd-lg-10p"><span>اسم اللاعب</span></th>
                                     <th class="wd-lg-10p"><span>له</span></th>
                                     <th class="wd-lg-10p"><span>عليه</span></th>
                                     <th class="wd-lg-10p"><span>السالب</span></th>
                                     <th class="wd-lg-10p"><span>النقاط</span></th>
                                     <th class="wd-lg-10p"><span>النقاط النهائيه</span></th>
-                                    <th class="wd-lg-15p">العمليات</th>
+                                    <th class="wd-lg-10p"><span>نقاط الفورمولا</span></th>
+                                    <th class="wd-lg-10p">العمليات</th>
                                 </tr>
                             </thead>
 
@@ -68,6 +69,8 @@
                                     <td>{{ $result->points }}</td>
 
                                     <td>{{ $result->total }}</td>
+
+                                    <td>{{ $result->score }}</td>
 
                                     <td>
                                         <a href="{{ route('Result.edit' , $result->id) }}" class="btn btn-sm btn-info">

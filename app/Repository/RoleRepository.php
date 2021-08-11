@@ -55,7 +55,6 @@ class RoleRepository implements RoleRepositoryInterface
     }
 
 
-
     public function update($request)
     {
         try

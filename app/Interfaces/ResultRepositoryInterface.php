@@ -9,7 +9,6 @@ interface ResultRepositoryInterface
 
     public function create();
 
-    
     public function edit($id);
 
     public function store($request);

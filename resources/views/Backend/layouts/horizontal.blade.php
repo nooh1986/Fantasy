@@ -21,11 +21,6 @@
                     @endcan
                    
 
-                    @can('إضافه نتائج الفورمولا')
-                        <li aria-haspopup="true"><a href="{{ route('Formula.create') }}" class=""><i class="si si-notebook"> تسجيل نتائج الفورمولا </i></a></li>
-                    @endcan
-                   
-
                     @can('الاحصائيات')
                         <li aria-haspopup="true"><a href="{{ route('dashboard') }}" class=""><i class="si si-chart"> الإحصائيات</i></a></li>
                     @endcan
@@ -40,7 +35,7 @@
                         <li aria-haspopup="true"><a href="{{ route('Ranking') }}" class=""><i class="si si-trophy"> الترتيب العام </i></a></li>
                     @endcan
 
-                   <li aria-haspopup="true"><a href="{{ route('record') }}" class=""><i class="si si-list"> سجل الربعيات</i></a></li>
+                   <li aria-haspopup="true"><a href="{{ route('Formula.create') }}" class=""><i class="si si-list"> سجل الربعيات</i></a></li>
                     
 
 

@@ -6,114 +6,17 @@ use App\Models\User;
 use App\Models\Round;
 use App\Models\Result;
 use App\Interfaces\FormulaRepositoryInterface;
-use App\Models\Total;
+
 
 class FormulaRepository implements FormulaRepositoryInterface 
 {
     
-    public function create()
+    public function record()
     {
-        $rounds = Round::all();
-        return view('Backend.Formula.create' , compact('rounds'));
+        $records = Result::where('score', 25)->orderBy('round_id', 'ASC')->get();
+        return view('Backend.Ranking.record' , compact('records'));
     }
-
-
-    public function store($request)
-    {
-        $formulas = Result::where('round_id',$request->id)->orderBy('total' , 'DESC')->orderBy('goal' , 'DESC')->orderBy('ongoal' , 'ASC')->get();
-        
-       
-        foreach($formulas as $index => $key)
-        {
-
-            Total::where('result_id',$key->id)->delete();
-
-            if($index == 0)
-            {
-                $data['count'] = 1;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 25;
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 1)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 18; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 2)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 15;
-                $data['result_id'] = $key->id; 
-            }
-
-            if($index == 3)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 12; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 4)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 10; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 5)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 8;
-                $data['result_id'] = $key->id; 
-            }
-
-            if($index == 6)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 6; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 7)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 4; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 8)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 2; 
-                $data['result_id'] = $key->id;
-            }
-
-            if($index == 9)
-            {
-                $data['count'] = 0;
-                $data['user_id'] = $key->user_id;
-                $data['total']  = 0;
-                $data['result_id'] = $key->id; 
-            }
-
-            Total::Create($data);
-        }
-        return view('Backend.Formula.index' , compact('formulas'));
-    }
-    
-    
+           
     public function ranking()
     {
         $players = User::all();

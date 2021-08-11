@@ -21,27 +21,21 @@ class FormulaController extends Controller
         return $this->Formula->last_result();
     }
 
-    
+        
     public function create()
     {
-        return $this->Formula->create();
+        return $this->Formula->record();
     }
 
     
-    public function store(Request $request)
-    {
-        return $this->Formula->store($request);
-    }
-
-    
-    public function ranking()
-    {
-        return $this->Formula->ranking();
-    }
-
-
     public function round_result(Request $request)
     {
         return $this->Formula->round_result($request);
+    }
+
+
+    public function ranking()
+    {
+        return $this->Formula->ranking();
     }
 }
