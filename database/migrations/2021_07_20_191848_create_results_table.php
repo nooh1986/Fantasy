@@ -16,6 +16,7 @@ class CreateResultsTable extends Migration
         Schema::create('results', function (Blueprint $table) {
             $table->id();
             $table->integer('points');
+            $table->integer('score')->nullable()->default(0);
             $table->integer('neg')->default(0);
             $table->integer('total');
             $table->integer('goal')->nullable();
