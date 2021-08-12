@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Total;
 use App\Models\Result;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;

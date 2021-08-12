@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Total;
 use App\Models\User;
 use App\Models\Round;
 use Illuminate\Database\Eloquent\Model;
